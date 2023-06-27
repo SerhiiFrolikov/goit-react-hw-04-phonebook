@@ -22,12 +22,14 @@ const App = () => {
       return alert(`${name} is already in contacts`);
     }
 
-    setContacts([...contacts, { name, id: nanoid(8), number }]);
+    setContacts(prevContacts => [
+      ...prevContacts,
+      { name, id: nanoid(8), number },
+    ]);
   };
 
   const handleContactsDelete = e => {
-    const names = contacts.filter(contact => contact.id !== e.currentTarget.id);
-    setContacts([...names]);
+    setContacts(contacts.filter(contact => contact.id !== e.currentTarget.id));
   };
 
   const getVisibleContacts = () =>
