@@ -28,8 +28,10 @@ const App = () => {
     ]);
   };
 
-  const handleContactsDelete = e => {
-    setContacts(contacts.filter(contact => contact.id !== e.currentTarget.id));
+  const handleContactsDelete = id => {
+    setContacts(prevContacts =>
+      prevContacts.filter(contact => contact.id !== id)
+    );
   };
 
   const getVisibleContacts = () =>

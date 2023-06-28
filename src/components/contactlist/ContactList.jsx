@@ -16,7 +16,7 @@ export const ContactList = ({ contacts, handleContactsDelete }) => {
             <Name>
               {name}: <PhoneNumber>{number}</PhoneNumber>
             </Name>
-            <DeleteBtn id={id} onClick={handleContactsDelete}>
+            <DeleteBtn id={id} onClick={() => handleContactsDelete(id)}>
               Delete
             </DeleteBtn>
           </ListItem>
